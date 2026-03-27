@@ -45,372 +45,505 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #fefefe;
-      color: #1a2c3e;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: white;
+            color: #1f2937;
+            line-height: 1.5;
+        }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 2rem 4rem;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
 
-    /* Typography */
-    h1 {
-      font-size: 3.2rem;
-      font-weight: 800;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #0A2F44 0%, #1C5D7A 100%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      margin-bottom: 0.75rem;
-    }
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(to bottom, #faf5ff, white);
+            padding: 5rem 0;
+            text-align: center;
+        }
 
-    .subhead {
-      font-size: 1.4rem;
-      font-weight: 500;
-      color: #2c6e9e;
-      margin-bottom: 1.5rem;
-      border-left: 3px solid #2c9cd4;
-      padding-left: 1rem;
-    }
+        .badge-founder {
+            display: inline-block;
+            background: #f3e8ff;
+            color: #7c3aed;
+            padding: 0.375rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
 
-    h2 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #0A2F44;
-      margin-top: 3rem;
-      margin-bottom: 1rem;
-      letter-spacing: -0.3px;
-      border-left: 5px solid #2c9cd4;
-      padding-left: 1rem;
-    }
+        .subhead {
+            font-size: 1.25rem;
+            color: #4b5563;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
 
-    h3 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: #1a5d7d;
-      margin: 1.8rem 0 0.8rem 0;
-    }
+        .hero-divider {
+            width: 6rem;
+            height: 0.25rem;
+            background: #8b5cf6;
+            margin: 1.5rem auto 0;
+            border-radius: 9999px;
+        }
 
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #2c3e50;
-      margin-bottom: 1.2rem;
-    }
+        /* Main Content */
+        .main-content {
+            max-width: 56rem;
+            margin: 4rem auto;
+            padding: 0 1rem;
+        }
 
-    .lead {
-      font-size: 1.3rem;
-      font-weight: 450;
-      background: #f0f7fc;
-      padding: 1.8rem;
-      border-radius: 20px;
-      border-left: 6px solid #1a5d7d;
-      margin: 1.5rem 0;
-      color: #1e3a5f;
-    }
+        /* Author Card */
+        .author-card {
+            background: #f9fafb;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
 
-    /* Feature Grid */
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0 2rem;
-    }
+        .author-card-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+        }
 
-    .feature-card {
-      background: #ffffff;
-      border-radius: 24px;
-      padding: 1.8rem;
-      transition: all 0.25s ease;
-      border: 1px solid #eef2f8;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-    }
+        @media (min-width: 768px) {
+            .author-card-inner {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
 
-    .feature-card:hover {
-      transform: translateY(-5px);
-      border-color: #cde3ef;
-      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
-    }
+        .author-avatar {
+            flex-shrink: 0;
+        }
 
-    .feature-card h4 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #0f2b3d;
-      margin-bottom: 0.75rem;
-    }
+        .avatar-circle {
+            width: 8rem;
+            height: 8rem;
+            background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
 
-    .feature-card p {
-      font-size: 0.95rem;
-      color: #4a627a;
-      margin-bottom: 0;
-    }
+        .avatar-circle span {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+        }
 
-    /* Author Hero Section */
-    .author-hero {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      background: linear-gradient(135deg, #ffffff 0%, #fafdff 100%);
-      border-radius: 28px;
-      padding: 2rem;
-      margin: 2rem 0 2.5rem;
-      border: 1px solid #e2edf5;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
-      align-items: center;
-    }
-    
-    .author-avatar-large {
-      width: 100px;
-      height: 100px;
-      background: linear-gradient(145deg, #eef3fa, #ffffff);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #1a5d7d;
-      border: 2px solid #cde1ed;
-    }
-    
-    .author-bio {
-      flex: 1;
-    }
-    
-    .author-bio strong {
-      font-size: 1.6rem;
-      font-weight: 800;
-      display: block;
-      color: #0a2f44;
-      margin-bottom: 0.25rem;
-    }
-    
-    .author-tagline {
-      font-size: 1rem;
-      font-weight: 500;
-      color: #2c9cd4;
-      margin-bottom: 0.75rem;
-    }
-    
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: #eef3fa;
-      padding: 0.5rem 1rem;
-      border-radius: 40px;
-      font-weight: 500;
-      margin-top: 0.75rem;
-      transition: 0.2s;
-    }
-    
-    .social-link:hover {
-      background: #1a5d7d;
-      color: white;
-      text-decoration: none;
-    }
+        .author-info {
+            flex: 1;
+            text-align: center;
+        }
 
-    ul {
-      margin: 1rem 0 1.5rem;
-      list-style: none;
-    }
-    li {
-      font-size: 1rem;
-      margin-bottom: 0.6rem;
-      padding-left: 1.8rem;
-      position: relative;
-    }
-    li::before {
-      content: "✓";
-      color: #1a5d7d;
-      font-weight: bold;
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
+        @media (min-width: 768px) {
+            .author-info {
+                text-align: left;
+            }
+        }
 
-    .faq-item {
-      margin-bottom: 1.5rem;
-      border-bottom: 1px solid #e9f0f5;
-      padding-bottom: 1rem;
-    }
-    .faq-item h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-    }
+        .author-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
 
-    .cta-glow {
-      background: linear-gradient(105deg, #f4faff 0%, #e9f2f9 100%);
-      border-radius: 2rem;
-      padding: 3rem 2rem;
-      text-align: center;
-      margin: 3rem 0;
-      border: 1px solid #cde0ec;
-    }
-    .btn-primary {
-      background: #0f4c5f;
-      color: white;
-      font-weight: 700;
-      padding: 0.9rem 2.2rem;
-      border-radius: 3rem;
-      display: inline-block;
-      transition: 0.2s;
-    }
-    .btn-primary:hover {
-      background: #0a3a48;
-      transform: scale(1.02);
-      text-decoration: none;
-    }
+        .author-title {
+            color: #7c3aed;
+            margin-bottom: 0.75rem;
+        }
 
-    .footer-note {
-      text-align: center;
-      border-top: 1px solid #e2edf5;
-      padding-top: 2rem;
-      margin-top: 2rem;
-      font-size: 0.8rem;
-      color: #6c86a0;
-    }
-    
-    a {
-      color: #1a5d7d;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    
-    .badge-founder {
-      background: #eef3fc;
-      color: #0f4c5f;
-      padding: 0.3rem 1rem;
-      border-radius: 30px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      display: inline-block;
-      margin-bottom: 1.2rem;
-    }
-    
-    @media (max-width: 700px) {
-      .container { padding: 1.5rem; }
-      h1 { font-size: 2.2rem; }
-      .subhead { font-size: 1.1rem; }
-      .author-hero { flex-direction: column; text-align: center; }
-    }
-  </style>
+        .quote-box {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #8b5cf6;
+        }
+
+        .quote-box p {
+            color: #374151;
+            font-style: italic;
+        }
+
+        .linkedin-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #f3e8ff;
+            color: #7c3aed;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        .linkedin-link:hover {
+            background: #e9d5ff;
+        }
+
+        /* Content Typography */
+        .content-text {
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .content-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .content-text h2 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #111827;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-text strong {
+            color: #111827;
+        }
+
+        /* Platform Link Box */
+        .platform-box {
+            background: #faf5ff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid #e9d5ff;
+            margin: 1.5rem 0;
+        }
+
+        .platform-box p {
+            margin: 0;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            margin: 1.5rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .feature-card {
+            background: #f9fafb;
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        /* Quote Block */
+        .quote-block {
+            background: #faf5ff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            border-left: 4px solid #8b5cf6;
+            margin: 2rem 0;
+        }
+
+        .quote-block p {
+            color: #1f2937;
+            font-size: 1.125rem;
+            font-style: italic;
+            margin-bottom: 0.75rem;
+        }
+
+        .quote-author {
+            color: #7c3aed;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p {
+            color: #6b7280;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+            border-radius: 1rem;
+            padding: 2.5rem 2rem;
+            margin: 2rem 0;
+        }
+
+        .cta-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-subtitle {
+            font-size: 1.1rem;
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: #7c3aed;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #6d28d9;
+        }
+
+        .founder-signature {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 1.25rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .footer p {
+            color: #9ca3af;
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #7c3aed;
+            text-decoration: none;
+            font-size: 0.875rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: #7c3aed;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
+
 <div class="container">
-
-  <div class="badge-founder">
-    ОТ АВТОРА: Магдалена Мъглижанова
-  </div>
-
-  <h1>Магдалена Мъглижанова</h1>
-  <div class="subhead">Създадох MagCommunity, за да облекча ежедневната работа на учителите и да им помогна да се фокусират върху учениците.</div>
-
-  <div class="author-hero">
-    <div class="author-avatar-large">ММ</div>
-    <div class="author-bio">
-      <strong>Магдалена Мъглижанова</strong>
-      <div class="author-tagline">Преподавател по програмиране и ИИ | Основател на MagCommunity</div>
-      <p style="margin: 0.5rem 0 0 0;">
-        „Всеки ден виждам колко време учителите отделят за проверки, протоколи и подготовка на уроци. С MagCommunity искам да им дам повече време за това, което наистина има значение – учениците.“
-      </p>
-      <a href="https://www.linkedin.com/in/magdalena-maglizhanova/" target="_blank" class="social-link">🔗 LinkedIn профил →</a>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="badge-founder">ОТ АВТОРА</div>
+        <div class="subhead">Създадох MagCommunity (Дигитален асистент за учители), за да улесня ежедневната работа на учителите.</div>
+        <div class="hero-divider"></div>
     </div>
-  </div>
 
-  <p>Здравейте, аз съм <strong>Магдалена Мъглижанова</strong>. Преподавам програмиране и изкуствен интелект и ежедневно наблюдавам колко натоварени са учителите – между подготовка на уроци, проверка на домашни и административни задачи почти не остава време за учениците. Именно това ме вдъхнови да създам <strong>MagCommunity</strong> – платформа, която улеснява ежедневната работа на учителите и им дава повече свобода да се концентрират върху това, което е най-важно.</p>
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Author Profile Card -->
+        <div class="author-card">
+            <div class="author-card-inner">
+                <div class="author-avatar">
+                    <div class="avatar-circle">
+                        <span>ММ</span>
+                    </div>
+                </div>
+                <div class="author-info">
+                    <div class="author-name">Магдалена Мъглижанова</div>
+                    <div class="author-title">Преподавател по програмиране и изкуствен интелект | Основател на MagCommunity - дигитален асистент за учители</div>
+                    <div class="quote-box">
+                        <p>„Всеки ден виждам колко много време учителите отделят за проверки, протоколи и подготовка на уроци. С MagCommunity искам да им дам повече време за това, което наистина има значение – учениците.“</p>
+                    </div>
+                    <a href="https://www.linkedin.com/in/magdalena-maglizhanova/" target="_blank" class="linkedin-link">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        LinkedIn профил
+                    </a>
+                </div>
+            </div>
+        </div>
 
-  <p>Можете да разгледате платформата тук: <strong><a href="https://magcommunity.vercel.app/" target="_blank">MagCommunity – инструмент, създаден от учител за учители</a></strong></p>
+        <!-- Main Text Content -->
+        <div class="content-text">
+            <p>Здравейте, аз съм <strong>Магдалена Мъглижанова</strong>. Преподавам програмиране и изкуствен интелект и ежедневно наблюдавам колко натоварени са учителите – между подготовка на уроци, проверка на домашни и административни задачи почти не остава време за самите ученици. Именно това ме вдъхнови да създам <strong>MagCommunity</strong> – платформа, която улеснява ежедневната работа на учителите и им дава повече свобода да се концентрират върху това, което е най-важно.</p>
 
-  <h2>Как започна всичко?</h2>
-  <p>През 2025 г., след години преподавателски опит, реших, че трябва да има начин учителите да спестяват време, без да губят качество. Започнах да разработвам MagCommunity с идеята да внедря изкуствен интелект в класната стая по смислен начин. Днес платформата помага на преподавателите да генерират уроци, тестове и да проследяват напредъка на учениците.</p>
+            <div class="platform-box">
+                <p><strong>MagCommunity</strong> – инструмент, създаден от учител за учители</p>
+            </div>
 
-  <p>MagCommunity не е просто софтуер – това е моят отговор на въпроса: „Как да направим така, че учителите да имат повече време за учениците и за себе си?“</p>
+            <h2>Как започна всичко?</h2>
+            <p>През 2025 г., след години преподавателски опит, реших, че трябва да има начин учителите да спестяват време, без да губят качество. Започнах да разработвам MagCommunity с идеята да внедря изкуствен интелект в класната стая по смислен начин. Днес платформата помага на преподавателите да генерират уроци, тестове и да проследяват напредъка на учениците.</p>
+            <p>MagCommunity не е просто софтуер – това е моят отговор на въпроса: „Как да оптимизираме работния процес в училище?“</p>
 
-  <h2>Какво предлага платформата?</h2>
-  <p>MagCommunity е инструмент, който комбинира изкуствен интелект с практически преподавателски опит, за да улесни ежедневната работа. С него можете лесно да:</p>
-  <ul>
-    <li>генерирате уроци и учебни материали;</li>
-    <li>създавате тестове и задачи за различни нива на учениците;</li>
-    <li>получавате автоматично оценяване и полезна обратна връзка;</li>
-    <li>проследявате напредъка на учениците с графики и портфолиа.</li>
-  </ul>
+            <h2>Какво предлага платформата?</h2>
+            <p>MagCommunity е инструмент, който комбинира изкуствен интелект с практически преподавателски опит, за да улесни ежедневната работа. С него можете лесно да:</p>
+            <ul>
+                <li>генерирате уроци и учебни материали;</li>
+                <li>създавате тестове и задачи за различни нива на учениците;</li>
+                <li>получавате автоматично оценяване и полезна обратна връзка;</li>
+                <li>проследявате напредъка на учениците чрез персонално портфолио и статистически данни.</li>
+            </ul>
 
-  <h2>Как помага на учителите?</h2>
-  <div class="feature-grid">
-    <div class="feature-card">
-      <h4>📚 Бързо създаване на уроци</h4>
-      <p>Структурирани учебни планове, готови за използване и адаптирани към учебната програма.</p>
+            <h2>Как помага на учителите?</h2>
+
+            <!-- Features Grid -->
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>📚 Бързо създаване на уроци</h4>
+                    <p>Структурирани планове, готови за използване и адаптирани към учебната програма.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🎯 Персонализирани задачи</h4>
+                    <p>Автоматично създаване на задания за ученици с различни умения.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🤖 Автоматично оценяване</h4>
+                    <p>Генериране на тестове и автоматично оценяване – бързо и точно.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📊 Проследяване на напредъка</h4>
+                    <p>Персонално портфолио за всеки ученик, което предоставя статистически извадки и визуализации, улесняващи проследяването на напредъка от учителя.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🖼️ Генериране на изображения и сертификати</h4>
+                    <p>Създаване на персонализирани изображения и сертификати за ученици според постиженията им.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>💬 Споделяне на идеи между учители</h4>
+                    <p>Видеочат за обмен на идеи и добри практики между преподаватели.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📄 Разглеждане на документи на МОН</h4>
+                    <p>ИИ анализира официални документи и предоставя обяснения, подробни отговори и насоки за учителите.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📑 Генериране на официални документи</h4>
+                    <p>Създаване на документи според изискванията – писма до родители, доклади за отсъствия и други официални формуляри.</p>
+                </div>
+            </div>
+
+            <!-- Quote -->
+            <div class="quote-block">
+                <p>"Всеки инструмент в MagCommunity е тестван в реалната класна стая, за да е полезен и лесен за учителите."</p>
+                <p class="quote-author">– Магдалена Мъглижанова</p>
+            </div>
+
+            <h2>Често задавани въпроси</h2>
+
+            <div class="faq-item">
+                <h3>Какво е MagCommunity?</h3>
+                <p>MagCommunity е инструмент, който помага на учителите да подготвят уроци, да проверяват задания и да проследяват развитието на учениците си, като същевременно спестява време.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Платформата е българска?</h3>
+                <p>Да, създадена е в България, специално за нуждите на българските училища.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Колко време спестява?</h3>
+                <p>Учителите, които използват платформата, споделят, че спестяват между 5 и 8 часа седмично – време за работа с учениците.</p>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <div class="cta-title">Повече време за преподаване</div>
+                <div class="cta-subtitle">Изпробвайте MagCommunity – инструмент, създаден от преподавател за преподаватели.</div>
+                <a href="https://magcommunity.vercel.app/" class="btn-primary" target="_blank">🚀 Към MagCommunity</a>
+                <div class="founder-signature">Магдалена Мъглижанова, основател</div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p>© 2025 <strong>MagCommunity</strong> – Платформа за учители</p>
+                <p>Създадено от <strong>Магдалена Мъглижанова</strong> · Преподавател по програмиране и изкуствен интелект</p>
+                <div class="footer-links">
+                    <a href="https://magcommunity.vercel.app/" target="_blank">magcommunity.vercel.app</a>
+                    <span>|</span>
+                    <a href="https://www.linkedin.com/in/magdalena-maglizhanova/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="feature-card">
-      <h4>🎯 Персонализирани задачи</h4>
-      <p>Автоматично създаване на задания за ученици с различни умения.</p>
-    </div>
-    <div class="feature-card">
-      <h4>🤖 Автоматично оценяване</h4>
-      <p>Бърза и точна проверка на тестове и есета, спестяваща време и усилия.</p>
-    </div>
-    <div class="feature-card">
-      <h4>📊 Проследяване на напредъка</h4>
-      <p>Портфолиа за всеки ученик, които предоставят статистически извадки и визуализации за учителя.</p>
-    </div>
-    <div class="feature-card">
-      <h4>⏱️ По-малко административна работа</h4>
-      <p>Автоматизация на рутинни задачи, за да се съсредоточите върху учениците.</p>
-    </div>
-  </div>
-
-  <div style="background: #f9fdfe; border-radius: 20px; padding: 1rem 1.8rem; margin: 2rem 0; border-left: 3px solid #2c9cd4;">
-    <p style="margin: 0; font-style: italic;"><strong>Магдалена Мъглижанова</strong> – "Всеки инструмент в MagCommunity е тестван в реалната класна стая, за да е полезен и лесен за учителите."</p>
-  </div>
-
-  <h2>Често задавани въпроси</h2>
-  <div class="faq-item">
-    <h3>Какво е MagCommunity?</h3>
-    <p>MagCommunity е инструмент, който помага на учителите да подготвят уроци, да проверяват задания и да проследяват развитието на учениците си, като същевременно спестява време.</p>
-  </div>
-  <div class="faq-item">
-    <h3>Платформата е българска?</h3>
-    <p>Да, създадена е в България от мен, специално за нуждите на българските училища.</p>
-  </div>
-  <div class="faq-item">
-    <h3>Колко време спестява?</h3>
-    <p>Учителите, които използват платформата, споделят, че спестяват между 5 и 8 часа седмично – време за работа с учениците.</p>
-  </div>
-
-  <div class="cta-glow">
-    <p style="font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem;">Повече време за преподаване</p>
-    <p style="font-size: 1.1rem; margin-bottom: 1rem;">Изпробвайте MagCommunity – инструмент, създаден от преподавател за преподаватели.</p>
-    <a href="https://magcommunity.vercel.app/" class="btn-primary" target="_blank">🚀 Към MagCommunity</a>
-    <p style="margin-top: 1.2rem; font-size: 0.8rem;">Магдалена Мъглижанова, основател</p>
-  </div>
-
-  <div class="footer-note">
-    <p>© 2025 <strong>MagCommunity</strong> – Платформа за учители</p>
-    <p>Създадено от <strong>Магдалена Мъглижанова</strong> · Преподавател по програмиране и ИИ</p>
-    <p style="margin-top: 0.5rem;">
-      <a href="https://magcommunity.vercel.app/" target="_blank">https://magcommunity.vercel.app/</a> | 
-      <a href="https://www.linkedin.com/in/magdalena-maglizhanova/" target="_blank">LinkedIn</a>
-    </p>
-  </div>
 </div>
 </body>
 </html>
